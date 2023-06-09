@@ -3,11 +3,11 @@ import { StyleSheet, Text, View } from 'react-native';
 import SignIn from './components/signin';
 import { useState } from 'react';
 import StartRide from './components/startRide';
+import AuthenticationScreen from './components/AuthenticationScreen';
 
 export default function App() {
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
-
-  if (!isLoggedIn) {
+  const [isLoggedIn, setIsLoggedIn] = useState(0);
+  if (isLoggedIn == 0) {
     return (
       <View style={styles.container}>
         <SignIn setIsLoggedIn={setIsLoggedIn}></SignIn>
@@ -16,12 +16,22 @@ export default function App() {
     );
   }
   else{
+    if(isLoggedIn == 1){
     return (
       <View style={styles.container}>
-        <StartRide></StartRide>
+       <StartRide setIsLoggedIn={setIsLoggedIn}></StartRide>
         <StatusBar style="auto" />
       </View>
     );
+    }
+    else{
+      return(
+        <View style={styles.container}>
+        <AuthenticationScreen></AuthenticationScreen>
+         <StatusBar style="auto" />
+       </View>
+      );
+    }
 
   }
 }

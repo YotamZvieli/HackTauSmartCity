@@ -29,9 +29,8 @@ const SignIn = ({setIsLoggedIn}) => {
         onChangeText={text => setPassword(text)}
         value={password}
       />
-
       <TouchableOpacity style={styles.button} onPress={handleSignIn}>
-        <button onClick = {(event)=>{setIsLoggedIn(true); console.log("im here")}}>sign in</button>
+        <button onClick = {(event)=>{setIsLoggedIn(1)}}>sign in</button>
       </TouchableOpacity>
     </View>
   );

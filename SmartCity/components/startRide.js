@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { View, Text, TextInput, TouchableOpacity, Animated, PanResponder } from 'react-native';
 
-const StartRide = () => {
+const StartRide = ({setIsLoggedIn}) => {
   const [plateNumber, setPlateNumber] = useState('');
   const [favoritePlates, setFavoritePlates] = useState(['ABC123', 'XYZ789']); // Sample data
 
@@ -51,7 +51,7 @@ const StartRide = () => {
         </TouchableOpacity>
       ))}
 
-      <button
+      <button onClick={(event)=>{setIsLoggedIn(2);}}
         style={{
           transform: [{ translateX: pan.x }, { translateY: pan.y }],
           height: 50,
