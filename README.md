@@ -1,2 +1,2 @@
 # HackTauSmartCity
-**SmartCity Hack 2023
+- SmartCity Hack 2023
